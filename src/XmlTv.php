@@ -25,6 +25,7 @@ class XmlTv
         libxml_use_internal_errors(true);
 
         $domDocument = $validate ? self::getDocumentWithDtd() : new DOMDocument();
+        $domDocument->encoding = 'utf-8';
         $domDocument->formatOutput = true;
 
         self::buildDocument($domDocument, $tv->xmlSerialize());
